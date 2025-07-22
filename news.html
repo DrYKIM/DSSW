@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Analysis of Diverse Populations Worksheet</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom styles for table borders and padding within Tailwind context */
+        .custom-table th, .custom-table td {
+            border: 1px solid #e2e8f0; /* Tailwind's gray-200 */
+            padding: 0.75rem; /* Tailwind's p-3 */
+            text-align: left;
+        }
+        .custom-table thead th {
+            background-color: #f8fafc; /* Tailwind's gray-50 */
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 p-4 sm:p-6 lg:p-8">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl p-6 sm:p-8 lg:p-10">
+
+        <!-- Project Title -->
+        <h1 class="text-3xl sm:text-4xl font-bold text-center text-blue-800 mb-6 sm:mb-8 rounded-md bg-blue-50 p-4">
+            Media Portrayals of Diverse Populations: A News Content Analysis
+        </h1>
+
+        <!-- Objective -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-semibold text-blue-700 mb-3">Objective</h2>
+            <p class="text-lg leading-relaxed">
+                This project investigates how a specific racial/ethnic, LGBTQ+, or refugee/immigrant subgroup is portrayed in contemporary news media. You will systematically collect news articles, conduct content analysis to identify dominant themes, sentiment, and framing, and synthesize your findings using data visualization (primarily Datawrapper) to illustrate patterns in media representation and their potential implications for social work practice.
+            </p>
+        </div>
+
+        <!-- Tools Used -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-semibold text-blue-700 mb-3">Tools You Will Use</h2>
+            <ul class="list-disc list-inside space-y-2 text-lg">
+                <li><strong>News Search & Collection:</strong> Google News, Targeted News Websites, University Library Databases (e.g., Factiva/LexisNexis - *if available*).</li>
+                <li><strong>Data Preparation & Annotation:</strong> Google Sheets / Microsoft Excel (for manual coding and organization).</li>
+                <li><strong>Main Visualization & Synthesis Tool:</strong> <a href="https://datawrapper.de/" target="_blank" class="text-blue-600 hover:underline font-medium">Datawrapper</a> (datawrapper.de)</li>
+                <li><strong>Optional/Advanced Visualization Tool:</strong> <a href="https://public.tableau.com/" target="_blank" class="text-blue-600 hover:underline font-medium">Tableau Public</a> (public.tableau.com)</li>
+            </ul>
+        </div>
+
+        <!-- Key Concepts -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-semibold text-blue-700 mb-3">Key Concepts You Will Explore</h2>
+            <ul class="list-disc list-inside space-y-2 text-lg">
+                <li><strong>Media Framing:</strong> How news stories are constructed to emphasize certain aspects of an issue or group, often influencing public perception.</li>
+                <li><strong>Stereotypes & Misrepresentation:</strong> Identifying common or problematic portrayals of diverse populations.</li>
+                <li><strong>Visibility & Invisibility:</strong> Analyzing which groups or aspects of their experiences are over- or under-represented.</li>
+                <li><strong>Sentiment in News:</strong> Understanding the overall tone (positive, negative, neutral) of coverage towards the group.</li>
+                <li><strong>Issue Salience:</strong> Which topics or narratives are most frequently associated with the group in the news.</li>
+                <li><strong>Journalistic Ethics:</strong> Considering the responsibility of media in portraying diverse populations accurately and equitably.</li>
+                <li><strong>Critical Media Literacy:</strong> Developing skills to critically evaluate news sources and their narratives for bias or impact.</li>
+            </ul>
+        </div>
+
+        <hr class="border-t-2 border-blue-200 my-8">
+
+        <!-- Part 1 -->
+        <div class="mb-10">
+            <h2 class="text-2xl font-semibold text-blue-700 mb-4">Part 1: Defining Your Subgroup, Research Questions, & News Collection</h2>
+
+            <div class="mb-6">
+                <h3 class="text-xl font-medium text-gray-900 mb-2">1. Choosing Your Diverse Subgroup:</h3>
+                <p class="text-lg leading-relaxed mb-2">
+                    Select <strong>one</strong> specific minority subgroup in America. Consider:
+                </p>
+                <ul class="list-disc list-inside ml-4 space-y-1 text-lg">
+                    <li><strong>Racial/Ethnic Subgroups:</strong> e.g., African Americans, Mexican Americans, Vietnamese Americans, Navajo Nation members.</li>
+                    <li><strong>LGBTQ+ Population:</strong> e.g., Transgender individuals, Gay men, Lesbians, Bisexual community.</li>
+                    <li><strong>Refugee/Immigrant Populations:</strong> e.g., Syrian refugees, Venezuelan immigrants, Afghan arrivals, specific immigrant communities (e.g., Haitian community in Florida).</li>
+                </ul>
+                <p class="text-lg leading-relaxed italic mt-2">
+                    *Self-reflection:* Why did you choose this group? What initial assumptions or questions do you have about how they are portrayed in the news?
+                </p>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-xl font-medium text-gray-900 mb-2">2. Formulating News Analysis Questions:</h3>
+                <p class="text-lg leading-relaxed mb-2">
+                    Based on your chosen subgroup, formulate at least <strong>3-5 specific, answerable questions</strong> about their representation in news media. These questions will guide your news search and content analysis.
+                </p>
+                <ul class="list-disc list-inside ml-4 space-y-1 text-lg">
+                    <li>What are the dominant <strong>themes or topics</strong> (e.g., challenges, contributions, policy debates, crime, culture) associated with <strong>[Chosen Subgroup]</strong> in recent news coverage?</li>
+                    <li>What is the overall <strong>sentiment</strong> (positive, negative, neutral, mixed) of news articles featuring <strong>[Chosen Subgroup]</strong>?</li>
+                    <li>How are <strong>[Chosen Subgroup]</strong> individuals/communities <strong>framed</strong> (e.g., as victims, threats, resilient, integrated, dependent) in the news?</li>
+                    <li>Do different <strong>news sources</strong> (e.g., liberal vs. conservative, national vs. local) portray <strong>[Chosen Subgroup]</strong> differently regarding themes or sentiment?</li>
+                    <li>Are <strong>[Chosen Subgroup]</strong> individuals given agency and voice (e.g., quoted directly) in news articles, or are they primarily discussed by others?</li>
+                </ul>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-xl font-medium text-gray-900 mb-2">3. News Search & Collection Strategy:</h3>
+                <p class="text-lg leading-relaxed mb-2">
+                    <strong>Goal:</strong> Collect a manageable but representative sample of news articles (e.g., <strong>50-100 articles minimum</strong>) over a defined, recent period (e.g., last 6-12 months). Focus on credible, diverse news sources.
+                </p>
+                <p class="text-lg leading-relaxed mb-2">
+                    <strong>Primary Tool: Google News (<a href="https://news.google.com/" target="_blank" class="text-blue-600 hover:underline">news.google.com</a>)</strong>
+                </p>
+                <ul class="list-disc list-inside ml-4 space-y-1 text-lg">
+                    <li><strong>How to use:</strong> Craft effective search queries (e.g., `"transgender rights" AND "news"`, `"Syrian refugees" AND "integration"`, `"Black women" AND "entrepreneurship"`). Use "Tools" to filter by date.</li>
+                    <li><strong>Source Diversity:</strong> Select 3-5 diverse news sources (e.g., a major national newspaper, a local news outlet, an online-only news site, a specific-interest publication relevant to your group).</li>
+                    <li><strong>Data Collection:</strong> Systematically record the following in a spreadsheet for *each relevant article*: <strong>Headline</strong>, <strong>URL</strong>, <strong>Publication Date</strong>, <strong>Source/Publisher</strong>, and a <strong>Brief Summary/Key Entities</strong> (1-2 sentences).</li>
+                </ul>
+                <p class="text-lg leading-relaxed mt-2">
+                    *University Library Databases (if available, for more advanced students):* Factiva, LexisNexis Academic, ProQuest News & Newspapers offer more powerful search filters and access to full article text.
+                </p>
+            </div>
+
+            <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                <h3 class="text-xl font-semibold text-blue-800 mb-3">Sample Deliverable 1.1: News Article Log (Partial)</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full custom-table bg-white rounded-md">
+                        <thead>
+                            <tr>
+                                <th class="py-2 px-3 text-sm font-semibold text-gray-700">Headline</th>
+                                <th class="py-2 px-3 text-sm font-semibold text-gray-700">URL</th>
+                                <th class="py-2 px-3 text-sm font-semibold text-gray-700">Publication Date</th>
+                                <th class="py-2 px-3 text-sm font-semibold text-gray-700">Source/Publisher</th>
+                                <th class="py-2 px-3 text-sm font-semibold text-gray-700">Brief Summary/Key Entities</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2 px-3 text-sm">Trans Youth Bill Blocked in State Senate</td>
+                                <td class="py-2 px-3 text-sm">example.com/transyouthbill</td>
+                                <td class="py-2 px-3 text-sm">2025-06-15</td>
+                                <td class="py-2 px-3 text-sm">Local Herald</td>
+                                <td class="py-2 px-3 text-sm">Discusses a bill impacting trans youth, quotes advocacy groups.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-3 text-sm">Syrian Refugee Families Find New Homes in City</td>
+                                <td class="py-2 px-3 text-sm">example.com/syrianfamilies</td>
+                                <td class="py-2 px-3 text-sm">2025-05-20</td>
+                                <td class="py-2 px-3 text-sm">Daily Journal</td>
+                                <td class="py-2 px-3 text-sm">Focuses on success stories of refugee integration, local support.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-3 text-sm">LGBTQ+ Pride Month Celebrations Spark Debate</td>
+                                <td class="py-2 px-3 text-sm">example.com/pridecelebrations</td>
+                                <td class="py-2 px-3 text-sm">2025-06-01</td>
+                                <td class="py-2 px-3 text-sm">National Times</td>
+                                <td class="py-2 px-3 text-sm">Covers ongoing discussions about Pride events, quotes activists and critics.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-3 text-sm">Immigrant Workers' Contributions to Economy</td>
+                                <td class="py-2 px-3 text-sm">example.com/immigrantwork</td>
+                                <td class="py-2 px-3 text-sm">2025-04-10</td>
+                                <td class="py-2 px-3 text-sm">Business Insider</td>
+                                <td class="py-2 px-3 text-sm">Highlights economic impact of immigrant labor force, data on various sectors.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <hr class="border-t-2 border-blue-200 my-8">
+
+        <!-- Part 2 -->
+        <div class="mb-10">
+            <h2 class="text-2xl font-semibold text-blue-700 mb-4">Part 2: Content Analysis & Data Annotation – Re-analyzing Your Findings</h2>
+            <p class="text-lg leading-relaxed mb-4">
+                This is the analytical core, where you systematically categorize the content of your collected news articles based on your research questions.
+            </p>
+
+            <div class="mb-6">
+                <h3 class="text-xl font-medium text-gray-900 mb-2">Tools for Data Preparation & Annotation:</h3>
+                <p class="text-lg leading-relaxed mb-2">
+                    <strong>Primary Tool: Google Sheets / Microsoft Excel</strong>
+                </p>
+                <ul class="list-disc list-inside ml-4 space-y-1 text-lg">
+                    <li><strong>How to use:</strong> Add new columns to your spreadsheet and manually *code* each article based on its content.</li>
+                    <ul class="list-circle list-inside ml-8 space-y-1 text-lg">
+                        <li><strong>Sentiment (per article):</strong> Read the article and assign an overall sentiment from the perspective of the chosen subgroup's portrayal: "Positive," "Negative," "Neutral," or "Mixed." (Define clear criteria, e.g., "Positive" if focusing on achievements, "Negative" if focusing on problems/conflict without positive resolution).</li>
+                        <li><strong>Primary Theme/Topic:</strong> What is the main subject associated with your subgroup in this article? (e.g., for LGBTQ+: "Rights/Legislation," "Culture/Arts," "Health," "Discrimination/Violence"; for Refugees: "Integration," "Border Issues," "Aid/Support," "Economic Impact," "Security Concerns"). Aim for 5-8 distinct themes.</li>
+                        <li><strong>Framing/Portrayal:</strong> How is the group primarily characterized or positioned in the narrative? (e.g., "Victim/Vulnerable," "Activist/Agent of Change," "Threat/Burden," "Cultural Contributor," "Statistical Abstraction").</li>
+                        <li><strong>Voice/Agency:</strong> Does the article predominantly feature direct quotes from members of the subgroup ("Yes"), or are they mostly discussed by others ("No")?</li>
+                        <li><strong>Key Individuals/Organizations (Optional):</strong> Note recurring prominent figures or groups mentioned.</li>
+                    </ul>
+                    <li><strong>Consistency:</strong> Define your coding rules clearly before you start. It's often helpful to code a small sample (e.g., 10-15 articles), review for consistency with a classmate or instructor, and refine your categories before coding all articles.</li>
+                </ul>
+            </div>
+
+            <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                <h3 class="text-xl font-semibold text-blue-800 mb-3">Sample Deliverable 2.1: Annotated News Article Log (Partial)</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full custom-table bg-white rounded-md">
+                        <thead>
+                            <tr>
+                                <th class="py-2 px-3 text-sm font-semibold text-gray-700">Headline</th>
+                                <th class="py-2 px-3 text-sm font-semibold text-gray-700">Source</th>
+                                <th class="py-2 px-3 text-sm font-semibold text-gray-700">Publication Date</th>
+                                <th class="py-2 px-3 text-sm font-semibold text-gray-700">Sentiment</th>
+                                <th class="py-2 px-3 text-sm font-semibold text-gray-700">Primary Theme</th>
+                                <th class="py-2 px-3 text-sm font-semibold text-gray-700">Framing/Portrayal</th>
+                                <th class="py-2 px-3 text-sm font-semibold text-gray-700">Voice/Agency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2 px-3 text-sm">Trans Youth Bill Blocked in State Senate</td>
+                                <td class="py-2 px-3 text-sm">Local Herald</td>
+                                <td class="py-2 px-3 text-sm">2025-06-15</td>
+                                <td class="py-2 px-3 text-sm">Negative</td>
+                                <td class="py-2 px-3 text-sm">Rights/Legislation</td>
+                                <td class="py-2 px-3 text-sm">Victim/Vulnerable</td>
+                                <td class="py-2 px-3 text-sm">Yes</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-3 text-sm">Syrian Refugee Families Find New Homes in City</td>
+                                <td class="py-2 px-3 text-sm">Daily Journal</td>
+                                <td class="py-2 px-3 text-sm">2025-05-20</td>
+                                <td class="py-2 px-3 text-sm">Positive</td>
+                                <td class="py-2 px-3 text-sm">Integration/Resettlement</td>
+                                <td class="py-2 px-3 text-sm">Resilient/Integrated</td>
+                                <td class="py-2 px-3 text-sm">Yes</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-3 text-sm">LGBTQ+ Pride Month Celebrations Spark Debate</td>
+                                <td class="py-2 px-3 text-sm">National Times</td>
+                                <td class="py-2 px-3 text-sm">2025-06-01</td>
+                                <td class="py-2 px-3 text-sm">Mixed</td>
+                                <td class="py-2 px-3 text-sm">Culture/Community</td>
+                                <td class="py-2 px-3 text-sm">Diverse Perspectives</td>
+                                <td class="py-2 px-3 text-sm">Yes</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-3 text-sm">Immigrant Workers' Contributions to Economy</td>
+                                <td class="py-2 px-3 text-sm">Business Insider</td>
+                                <td class="py-2 px-3 text-sm">2025-04-10</td>
+                                <td class="py-2 px-3 text-sm">Positive</td>
+                                <td class="py-2 px-3 text-sm">Economic Impact</td>
+                                <td class="py-2 px-3 text-sm">Cultural Contributor</td>
+                                <td class="py-2 px-3 text-sm">No</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-3 text-sm">Anti-Trans Legislation Sees Increased Momentum</td>
+                                <td class="py-2 px-3 text-sm">Fox News</td>
+                                <td class="py-2 px-3 text-sm">2025-06-18</td>
+                                <td class="py-2 px-3 text-sm">Negative</td>
+                                <td class="py-2 px-3 text-sm">Rights/Legislation</td>
+                                <td class="py-2 px-3 text-sm">Threat/Problem</td>
+                                <td class="py-2 px-3 text-sm">No</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-3 text-sm">Local Outreach Helps Refugee Mental Health</td>
+                                <td class="py-2 px-3 text-sm">Community Times</td>
+                                <td class="py-2 px-3 text-sm">2025-05-25</td>
+                                <td class="py-2 px-3 text-sm">Positive</td>
+                                <td class="py-2 px-3 text-sm">Health/Well-being</td>
+                                <td class="py-2 px-3 text-sm">Resilient/Integrated</td>
+                                <td class="py-2 px-3 text-sm">Yes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <hr class="border-t-2 border-blue-200 my-8">
+
+        <!-- Part 3 -->
+        <div class="mb-10">
+            <h2 class="text-2xl font-semibold text-blue-700 mb-4">Part 3: Synthesizing Findings with Visualization (Datawrapper)</h2>
+            <p class="text-lg leading-relaxed mb-4">
+                Now you will use your coded data to create clear, compelling visualizations that answer your news analysis questions.
+            </p>
+
+            <div class="mb-6">
+                <h3 class="text-xl font-medium text-gray-900 mb-2">Primary Tool: Datawrapper (<a href="https://datawrapper.de/" target="_blank" class="text-blue-600 hover:underline">datawrapper.de</a>)</h3>
+                <ul class="list-disc list-inside ml-4 space-y-1 text-lg">
+                    <li><strong>Why Datawrapper?</strong> Simplicity & Speed, Clarity, Web Embedding, Focus on Storytelling.</li>
+                    <li><strong>How to use (Guided Steps):</strong></li>
+                    <ol class="list-decimal list-inside ml-8 space-y-1 text-lg">
+                        <li><strong>Prepare Data for Each Chart:</strong> Datawrapper often works best with data specifically formatted for the chart you want to make. You might need to create pivot tables or summary tables in your Excel/Google Sheet (e.g., count of articles by sentiment, count of articles by theme).</li>
+                        <li><strong>Upload Data:</strong> Copy-paste your summary data directly into Datawrapper, or upload a CSV file.</li>
+                        <li><strong>Choose Chart Type:</strong> Select the most appropriate visualization to answer each of your research questions.
+                            <ul class="list-disc list-inside ml-8 space-y-1 text-base">
+                                <li><strong>Sentiment Distribution:</strong> Bar Chart (or Pie Chart). Data: Counts of "Positive," "Negative," "Neutral," "Mixed" articles.</li>
+                                <li><strong>Dominant Themes/Topics:</strong> Bar Chart (sorted descending) or Column Chart. Data: Counts of articles for each 'Primary Theme'.</li>
+                                <li><strong>Framing/Portrayal Analysis:</strong> Bar Chart. Data: Counts for each 'Framing' category.</li>
+                                <li><strong>Sentiment by News Source (Comparative):</strong> Stacked Bar Chart or Grouped Bar Chart. Data: Counts of sentiment per source.</li>
+                                <li><strong>Coverage Volume Over Time:</strong> Line Chart or Column Chart (if by month/quarter). Data: Count of articles per publication date (aggregated by month/week).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Refine & Annotate:</strong> Use Datawrapper's "Refine" and "Annotate" tabs to add clear titles, descriptions, source information, customize colors, and add notes to highlight key findings.</li>
+                        <li><strong>Publish:</strong> Publish your charts to Datawrapper Public. They will provide an embed code and a direct link.</li>
+                    </ol>
+                </ul>
+            </div>
+
+            <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                <h3 class="text-xl font-semibold text-blue-800 mb-3">Sample Deliverable 3.1: Datawrapper Chart Links & Descriptions</h3>
+                <ul class="list-disc list-inside space-y-3 text-lg">
+                    <li>
+                        <strong>Link 1:</strong> <a href="https://datawrapper.de/_/YOUR_CHART_ID_1/" target="_blank" class="text-blue-600 hover:underline">News Sentiment Towards Transgender Individuals</a>
+                        <p class="ml-4 text-gray-700 text-base"><em>Description:</em> This bar chart visualizes the distribution of sentiment (Positive, Negative, Neutral, Mixed) across 85 news articles mentioning transgender individuals from June 2024 to June 2025. It highlights a predominantly negative sentiment (48% of articles).</p>
+                    </li>
+                    <li>
+                        <strong>Link 2:</strong> <a href="https://datawrapper.de/_/YOUR_CHART_ID_2/" target="_blank" class="text-blue-600 hover:underline">Top Themes in Refugee News Coverage</a>
+                        <p class="ml-4 text-gray-700 text-base"><em>Description:</em> This column chart displays the frequency of primary themes in 70 news articles about Syrian refugees. "Border Issues" and "Aid/Support" were the most common themes, indicating a focus on entry and assistance.</p>
+                    </li>
+                    <li>
+                        <strong>Link 3:</strong> <a href="https://datawrapper.de/_/YOUR_CHART_ID_3/" target="_blank" class="text-blue-600 hover:underline">Framing of LGBTQ+ Community by News Source</a>
+                        <p class="ml-4 text-gray-700 text-base"><em>Description:</em> This stacked bar chart compares the framing of the LGBTQ+ community (e.g., "Victim/Vulnerable," "Activist/Agent of Change") across three different news sources, revealing differing editorial approaches.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="border-t-2 border-blue-200 my-8">
+
+        <!-- Part 4 -->
+        <div class="mb-10">
+            <h2 class="text-2xl font-semibold text-blue-700 mb-4">Part 4: Written Analysis & Implications for Social Work</h2>
+            <p class="text-lg leading-relaxed mb-4">
+                This is where you bring your data, insights, and social work perspective together.
+            </p>
+
+            <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                <h3 class="text-xl font-semibold text-blue-800 mb-3">Deliverable 4.1: Comprehensive Written Analysis</h3>
+                <p class="text-lg leading-relaxed">
+                    A comprehensive written analysis (750-1000 words, including a bibliography) that:
+                </p>
+                <ul class="list-disc list-inside ml-4 space-y-2 text-lg">
+                    <li><strong>Introduction:</strong> Briefly introduces your chosen minority subgroup and the significance of their media representation. Clearly state your news analysis questions.</li>
+                    <li><strong>Methodology:</strong> Describe your news collection strategy (search terms, date range, sources) and how you performed the content analysis (coding categories, definition of sentiment/framing, number of articles analyzed).</li>
+                    <li><strong>Key Findings & Visual Evidence:</strong> Present your findings from the data analysis, explicitly referencing your Datawrapper (or Tableau) visualizations. For each visualization, explain what it shows and the key insight related to media representation of your chosen subgroup.
+                        <p class="ml-4 italic text-gray-700 text-base">
+                            *Example Sentence:* "As depicted in the 'News Sentiment Towards Transgender Individuals' bar chart [Link to chart], nearly half of the analyzed articles (48%) displayed a negative sentiment, often linked to discussions around legal restrictions."
+                        </p>
+                    </li>
+                    <li><strong>Analysis of Media Portrayals:</strong> Discuss *how* the news media portrays your chosen subgroup based on your data. Analyze dominant framings, recurring stereotypes, or instances of misrepresentation. Compare findings across different news sources if applicable.</li>
+                    <li><strong>Implications for Social Work Practice:</strong> Connect your findings to the field of social work.
+                        <ul class="list-circle list-inside ml-8 space-y-1 text-base">
+                            <li>How might these media portrayals influence public perception, policy decisions, and the lived experiences of members of this subgroup?</li>
+                            <li>What are the implications for social workers advocating for or working directly with this population? (e.g., need for counter-narratives, addressing internalized stigma, advocating for media literacy).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Limitations:</strong> Acknowledge any limitations of your analysis (e.g., small sample size, subjective nature of manual coding, limited range of news sources).</li>
+                    <li><strong>Conclusion:</strong> Summarize your main arguments and reiterate the importance of critical media analysis in social work.</li>
+                    <li><strong>Bibliography:</strong> Include a list of all news articles analyzed and any academic literature referenced.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
