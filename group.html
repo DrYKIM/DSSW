@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R Studio Data Analysis Worksheet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;660;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            color: #334155;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 960px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #1e293b;
+            font-weight: 700;
+        }
+        h1 {
+            font-size: 2.25rem;
+            margin-bottom: 1.5rem;
+        }
+        h2 {
+            font-size: 1.75rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        h3 {
+            font-size: 1.25rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        pre {
+            background-color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            font-family: 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            color: #1a202c;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 0.75rem 1rem;
+            text-align: left;
+        }
+        th {
+            background-color: #f8fafc;
+            font-weight: 600;
+            color: #1e293b;
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">R Studio Data Analysis Worksheet</h1>
+
+        <p class="mb-4">
+            This worksheet provides a step-by-step guide for importing and analyzing a simple dataset in R Studio, focusing on comparing pre and post-intervention scores, as well as group comparisons between CBT and PA therapy types.
+        </p>
+
+        <h2 class="text-xl">Demonstration Video</h2>
+        <p class="mb-4">
+            For a visual demonstration of the concepts, please refer to this video:
+            <a href="https://youtu.be/48izKsCX2so" target="_blank" rel="noopener noreferrer">https://youtu.be/48izKsCX2so</a>
+        </p>
+
+        <h2 class="text-xl">Sample Data</h2>
+        <p class="mb-4">
+            Below is the sample dataset that will be used for the analysis.
+        </p>
+        <table class="min-w-full bg-white border border-gray-300 rounded-lg">
+            <thead>
+                <tr>
+                    <th>ClientID</th>
+                    <th>group</th>
+                    <th>pre_score</th>
+                    <th>post_score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>CBT</td><td>15</td><td>10</td></tr>
+                <tr><td>2</td><td>CBT</td><td>13</td><td>9</td></tr>
+                <tr><td>3</td><td>CBT</td><td>17</td><td>11</td></tr>
+                <tr><td>4</td><td>CBT</td><td>12</td><td>8</td></tr>
+                <tr><td>5</td><td>CBT</td><td>16</td><td>12</td></tr>
+                <tr><td>6</td><td>PA</td><td>14</td><td>7</td></tr>
+                <tr><td>7</td><td>PA</td><td>18</td><td>10</td></tr>
+                <tr><td>8</td><td>PA</td><td>12</td><td>6</td></tr>
+                <tr><td>9</td><td>PA</td><td>15</td><td>8</td></tr>
+                <tr><td>10</td><td>PA</td><td>17</td><td>9</td></tr>
+            </tbody>
+        </table>
+
+        <h2 class="text-xl">R Studio Setup & Data Import</h2>
+
+        <h3>RStudio Cloud (Posit.cloud)</h3>
+        <ul class="list-disc pl-5 mb-4 space-y-2">
+            <li>Upload your saved Excel data file to RStudio Cloud.</li>
+            <li>Click on the uploaded data file within RStudio and use the import function to load it into your environment.</li>
+        </ul>
+
+        <h3>RStudio Desktop</h3>
+        <ul class="list-disc pl-5 mb-4 space-y-2">
+            <li>Go to "Import Dataset" (usually under the "File" menu or in the Environment pane).</li>
+            <li>Select your saved Excel data file and follow the prompts to import it.</li>
+        </ul>
+
+        <h3>Rename Data</h3>
+        <p class="mb-4">
+            It's good practice to rename your imported dataset for easier reference.
+        </p>
+        <pre><code>data &lt;- client_data</code></pre>
+
+        <h2 class="text-xl">Load ggplot2 Package</h2>
+        <p class="mb-4">
+            The `ggplot2` package is used for creating high-quality data visualizations.
+        </p>
+        <pre><code>library(ggplot2)</code></pre>
+
+        <h2 class="text-xl">Calculate Mean Scores (Pre and Post)</h2>
+        <p class="mb-4">
+            Calculate the average depressive symptoms scores before and after therapy.
+        </p>
+        <pre><code>pre_mean &lt;- mean(data$pre_score)
+pre_mean
+
+post_mean &lt;- mean(data$post_score)
+post_mean</code></pre>
+
+        <h3>Create Data Frame for Means</h3>
+        <p class="mb-4">
+            Organize the calculated means into a data frame suitable for plotting.
+        </p>
+        <pre><code>mean_data &lt;- data.frame(
+  Depression = c("Pre-Therapy", "Post-Therapy"),
+  Mean = c(pre_mean, post_mean)
+)
+mean_data</code></pre>
+
+        <h2 class="text-xl">Bargraph for Before and After Therapy Scores</h2>
+
+        <h3>Option 1: Basic Bargraph</h3>
+        <p class="mb-4">
+            A straightforward bar chart comparing the mean pre and post-therapy scores.
+        </p>
+        <pre><code>ggplot(mean_data, aes(x = Depression, y = Mean, fill = Depression)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Comparison of Pre and Post Therapy Depressive Symptoms",
+       x = "Assessment Time",
+       y = "Mean Depressive Symptoms Score")</code></pre>
+
+        <h3>Option 2: Advanced Bargraph</h3>
+        <p class="mb-4">
+            An enhanced bar chart with data labels, custom colors, and a minimalist theme.
+        </p>
+        <pre><code>ggplot(mean_data, aes(x = Depression, y = Mean, fill = Depression)) +
+  geom_bar(stat = "identity", show.legend = FALSE, width = 0.6) +
+  geom_text(aes(label = round(Mean, 1)), vjust = -0.5, size = 5) +
+  labs(title = "Comparison of Pre and Post Therapy Depressive Symptoms",
+       x = "Assessment Time",
+       y = "Mean Depressive Symptoms Score") +
+  theme_minimal() +
+  scale_fill_manual(values = c("skyblue", "lightcoral")) +
+  ylim(0, 16)</code></pre>
+
+        <h2 class="text-xl">Group Comparison: CBT vs. PA</h2>
+
+        <h3>Calculate Mean Post Scores by Group</h3>
+        <p class="mb-4">
+            Calculate the average post-therapy scores for each group (CBT and PA).
+        </p>
+        <pre><code>cbt_post_mean &lt;- mean(data$post_score[data$group == "CBT"])
+cbt_post_mean
+
+pa_post_mean &lt;- mean(data$post_score[data$group == "PA"])
+pa_post_mean</code></pre>
+
+        <h3>Create Data Frame for Group Means</h3>
+        <p class="mb-4">
+            Organize the group means into a data frame for plotting.
+        </p>
+        <pre><code>group_mean_data &lt;- data.frame(
+  Group = c("CBT", "PA"),
+  Mean_Post_Score = c(cbt_post_mean, pa_post_mean)
+)</code></pre>
+
+        <h2 class="text-xl">Bar Chart for Two Groups</h2>
+
+        <h3>Option 1: Basic Group Bargraph</h3>
+        <p class="mb-4">
+            A basic bar chart comparing the mean post-therapy scores between the CBT and PA groups.
+        </p>
+        <pre><code>ggplot(group_mean_data, aes(x = Group, y = Mean_Post_Score, fill = Group)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Comparison of Post-Therapy Scores by Group",
+       x = "Therapy Group",
+       y = "Mean Post-Therapy Score")</code></pre>
+
+        <h3>Option 2: Advanced Group Bargraph</h3>
+        <p class="mb-4">
+            An enhanced bar chart for group comparison with data labels, custom colors, and a clean theme.
+        </p>
+        <pre><code>ggplot(group_mean_data, aes(x = Group, y = Mean_Post_Score, fill = Group)) +
+  geom_bar(stat = "identity", show.legend = FALSE, width = 0.6) +
+  geom_text(aes(label = round(Mean_Post_Score, 1)), vjust = -0.5, size = 5) +
+  labs(title = "Comparison of Post-Therapy Scores by Group",
+       x = "Therapy Group",
+       y = "Mean Post-Therapy Score") +
+  theme_minimal() +
+  scale_fill_manual(values = c("orange", "purple")) +
+  ylim(0, 12)</code></pre>
+    </div>
+</body>
+</html>
